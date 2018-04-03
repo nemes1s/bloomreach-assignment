@@ -1,6 +1,6 @@
 <li class="row">
   <div class="col-md-1"><a routerLink="/commits/{{commit.sha}}" title="{{commit.sha}}">{{commit.sha | slice:0:10}}...</a></div>
   <div class="col-md-2">{{commit.commit.author.date | date:'yyyy-MM-dd HH:mm'}}</div>
-  <div class="col-md-3"> {{commit.commit.author.name}}</div>
-  <div class="col-md-6"> {{commit.commit.message}}</div>
+  <div class="col-md-3">{{commit.commit.author.name}}</div>
+  <div class="col-md-6">{{commit.commit.message}}</div>
 </li>

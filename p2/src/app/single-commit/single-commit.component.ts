@@ -1,17 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { CommitHolder } from '../models/commit.models';
 @Component({
-  selector: 'app-single-commit',
-  templateUrl: './single-commit.component.html',
-  styleUrls: ['./single-commit.component.css']
+    selector: 'app-single-commit',
+    templateUrl: './single-commit.component.html',
+    styleUrls: ['./single-commit.component.css']
 })
 export class SingleCommitComponent implements OnInit {
+    constructor() {}
 
-  constructor() { }
+    @Input() commit: CommitHolder;
 
-  @Input() commit: any;
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {}
 }
