@@ -3,10 +3,8 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { SingleCommitPageComponent } from './single-commit-page.component';
 
 import { DatePipe } from '@angular/common';
-import { CommitsService } from '../commits/commits.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ActivatedRoute, convertToParamMap } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 class MockCommitsComponent {}
