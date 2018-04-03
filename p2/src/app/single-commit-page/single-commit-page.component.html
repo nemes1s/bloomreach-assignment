@@ -1,0 +1,32 @@
+<div class="commit-holder" *ngIf="commit">
+  <h3>Viewing commit: {{commit.sha}}</h3>
+  <h5><a routerLink="/commits"><--Back</a></h5>
+  <table class="table table-hover">
+    <tbody>
+      <tr>
+        <td>Author:</td>
+        <td>{{commit.commit.author.name}}</td>
+      </tr>
+      <tr>
+        <td>Message:</td>
+        <td>{{commit.commit.message}}</td>
+      </tr>
+      <tr>
+        <td>Date:</td>
+        <td>{{commit.commit.author.date}}</td>
+      </tr>
+      <tr>
+        <td>Comments:</td>
+        <td><a href="{{commit.comments_url}}">Link</a></td>
+      </tr>
+      <tr>
+        <td>Files:</td>
+        <td><a *ngFor="let file of commit.files" href="{{file.blob_url}}">{{file.filename}}&nbsp;</a></td>
+      </tr>
+      <tr>
+        <td>Stats:</td>
+        <td>Total: {{commit.stats.total}}; Additions: {{commit.stats.additions}}; Deletions: {{commit.stats.deletions}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

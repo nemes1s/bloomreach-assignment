@@ -1,0 +1,40 @@
+<div class="row">
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <label for="">From:</label>
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dfrom" [(ngModel)]="fromDate" ngbDatepicker #d1="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button">
+            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-group">
+        <label for="">To:</label>
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dto" [(ngModel)]="toDate" ngbDatepicker #d2="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+            <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary submit" (click)="filter()">Go!</button>
+  </form>
+</div>
+<br>
+<br>
+<div class="row headers">
+  <div class="col-md-1">Sha:</div>
+  <div class="col-md-2">Date:</div>
+  <div class="col-md-3">Author:</div>
+  <div class="col-md-6">Message:</div>
+</div>
+<ul>
+  <app-single-commit *ngFor="let commit of commits" [commit]="commit"></app-single-commit>
+</ul>
